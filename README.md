@@ -7,4 +7,4 @@ This Boris Bikes project models the actual bicycle renting and managing system i
 
 It mimics real-life interactions between people, bikes, pickup/drop-off vans, docking stations and garages.
 
-At this stage, this is my third week learning Ruby from Makers Academy.
+At this stage, I am in my third week of learning Ruby from Makers Academy.
