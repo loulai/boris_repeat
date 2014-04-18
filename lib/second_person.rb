@@ -17,5 +17,9 @@ class Person
 		@bike = thingy.release_bike
 	end
 
+	def return_bike_to_station
+		@bike = nil
+	end
+
 end
 
