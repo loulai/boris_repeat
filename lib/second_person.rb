@@ -17,8 +17,8 @@ class Person
 		@bike = thingy.release_bike
 	end
 
-	def return_bike_to_station
-		@bike = nil
+	def return_bike_to(some_instance_of_the_class_Station)
+		some_instance_of_the_class_Station.dock(@bike)
 	end
 
 end

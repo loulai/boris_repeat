@@ -35,9 +35,13 @@ let (:person_with_bike) {Person.new(Bike.new)}
 		expect(person).to have_bike
 	end
 
-it 'can return a bike to a docking station' do
-	person_with_bike.return_bike_to_station
-	expect(person_with_bike).not_to have_bike
-end
+	it 'can return a bike to a docking station' do
+		my_station = double :station
+		expect(my_station).to receive(:dock).with(@bike)
+		person_with_bike.return_bike_to(my_station)
+		expect(person_with_bike).not_to have_bike
+	end
+
+
 
 end
