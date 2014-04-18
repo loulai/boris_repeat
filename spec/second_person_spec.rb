@@ -23,15 +23,16 @@ let (:person) {Person.new(bike)}
 	end
 
 	it 'can rent a bike from a docking station' do
-		station = double :station, release_bike: :bike
- 		# class :station.to_s.capitalize
- 		# 	def release
- 		# 		:bike
+		person_two = Person.new
+		my_station = double :station, release_bike: Bike.new
+ 		# class :my_station.to_s.capitalize
+ 		# 	def release_bike
+ 		# 		Bike.new
  		# 	end
 		# end 
-		expect(station).to receive(:release_bike)
-		person.rent_bike_from(station)
-		expect(person).to have_bike
+		expect(my_station).to receive(:release_bike)
+		person_two.rent_bike_from(my_station)
+		expect(person_two).to have_bike
 	end
 
 

@@ -9,9 +9,13 @@ class Person
 		!@bike.nil?
 	end
 
-def fall_down
-	@bike.break!
-end 
+	def fall_down
+		@bike.break!
+	end 
+
+	def rent_bike_from(thingy)
+		@bike = thingy.release_bike
+	end
 
 end
 
