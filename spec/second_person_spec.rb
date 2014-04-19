@@ -6,7 +6,7 @@ describe Person do
 
 let (:bike) {Bike.new} # == bike = Bike.new
 let (:person) {Person.new}
-let (:person_with_bike) {Person.new(Bike.new)}
+let (:person_with_bike) {Person.new(bike)}
 
 	it 'has no bike when created' do
 		expect(person).not_to have_bike
@@ -36,8 +36,16 @@ let (:person_with_bike) {Person.new(Bike.new)}
 	end
 
 	it 'can return a bike to a docking station' do
+		# person_with_bike = Person.new(bike)
 		my_station = double :station
-		expect(my_station).to receive(:dock).with(@bike)
+		expect(my_station).to receive(:dock).with(:bike)
+		person_with_bike.return_bike_to(my_station)
+
+	end
+
+	it 'will not have a bike after returning it' do
+		my_station = double :station, dock: nil 
+		expect(my_station).to receive(:dock).with(:bike)
 		person_with_bike.return_bike_to(my_station)
 		expect(person_with_bike).not_to have_bike
 	end
