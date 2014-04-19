@@ -1,5 +1,5 @@
 require "second_bike"
-require 'second_person'
+require "second_person"
 
 
 describe Person do
